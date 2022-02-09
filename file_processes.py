@@ -35,7 +35,7 @@ def import_binary_LIF_cts(file_path, dtype='>i2', skip=0):
         binary_data[dict_key[0]] = []
 
     for file in range(skip, len(file_list)):
-        data = np.fromfile('data/' + file_list[file], dtype=dtype)
+        data = np.fromfile(file_path + '/' + file_list[file], dtype=dtype)
 
         frames = np.array(data)
         decimate_arr = [frames[idx::channel_count] for idx in range(channel_count)]
